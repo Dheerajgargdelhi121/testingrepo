@@ -22,11 +22,11 @@ public class SeleniumDriver {
 
 	private SeleniumDriver() {
 
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		//WebDriverManager.chromedriver().setup();
+		//driver = new ChromeDriver();
 
-		// WebDriverManager.firefoxdriver().setup();
-		// driver = new FirefoxDriver();
+		 WebDriverManager.firefoxdriver().setup();
+		 driver = new FirefoxDriver();
 
 		driver.manage().window().maximize();
 
