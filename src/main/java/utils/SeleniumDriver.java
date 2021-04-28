@@ -22,6 +22,7 @@ public class SeleniumDriver {
 
 	private SeleniumDriver() {
 
+		// Added comment just to trigger build automatically when i merge my changes to github...
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 
