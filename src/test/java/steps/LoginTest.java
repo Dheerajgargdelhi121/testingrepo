@@ -58,7 +58,7 @@ public class LoginTest {
 		String actualtitle = SeleniumDriver.getDriver().getTitle();
 		Assert.assertEquals("Social Imprints", actualtitle);
 		
-		//just added comment, test cases will executed when i pushed my code to github. Through Jenkins.
+		//just updated comment, test cases will executed when i pushed my code to github. Through Jenkins.
 
 	}
 	
