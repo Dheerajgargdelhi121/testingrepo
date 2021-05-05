@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Step 1 Setup the checkout Github process
+    - name: Step 1 Setup the checkout Github processes
       uses: actions/checkout@v2
     - name: Step 2 Set up JDK 1.8
       uses: actions/setup-java@v1
