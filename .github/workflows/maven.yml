@@ -2,7 +2,7 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ origin ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -16,6 +16,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: '1.8'
+        distribution: 'adopt'
     - name: Step-3 - Build with Maven
       run: mvn -B package --file pom.xml
     - name: Step-4 - List the current directory
