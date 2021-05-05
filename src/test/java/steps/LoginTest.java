@@ -54,7 +54,7 @@ public class LoginTest {
 
 	@Then("^user logged successfully$")
 	public void user_logged_successfully() throws Throwable {
-		Thread.sleep(1000);
+		Thread.sleep(10000);
 		String actualtitle = SeleniumDriver.getDriver().getTitle();
 		Assert.assertEquals("Social Imprints", actualtitle);
 		
