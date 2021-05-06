@@ -15,7 +15,7 @@ public class GmailEmailIDActions {
 	}
 	
 	public void enter_email_id() {
-		gmailEmailID.email_id.sendKeys("dheeraj@vinsol.com");
+		gmailEmailID.email_id.sendKeys("demouser1@socialimprints.com");
 	}
 	
 	public void click_on_next() {
