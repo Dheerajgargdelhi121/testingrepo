@@ -50,7 +50,7 @@ public class LoginTest {
 		gmailPasswordActions.enter_password();
 		Thread.sleep(10000);
 		gmailPasswordActions.click_on_submit();
-		Thread.sleep(10000);
+		Thread.sleep(100000);
 	}
 
 	@Then("^user logged successfully$")
