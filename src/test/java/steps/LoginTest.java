@@ -76,7 +76,7 @@ public class LoginTest {
 		//String actualtitle = SeleniumDriver.getDriver().findElement(By.xpath("/html/body/div[7]/div[20]/div/article/div/div/span[1]")).getText();
 		Assert.assertEquals("Social Imprints", actualtitle);
 		
-		//Test cases will executed when i pushed my code to github. Through Jenkins.
+		//Test cases will executed when i pushed my code to github. Through Github actions.
 
 	}
 	
