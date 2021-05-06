@@ -16,7 +16,7 @@ public class GmailPasswordActions {
 	}
 	
 	public void enter_password() {
-		gmailPassword.password.sendKeys("qq11WW@@");
+		gmailPassword.password.sendKeys("indiaisbest@007");
 		
 	}
 	
