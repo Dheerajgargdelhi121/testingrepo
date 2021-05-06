@@ -55,7 +55,8 @@ public class LoginTest {
 	@Then("^user logged successfully$")
 	public void user_logged_successfully() throws Throwable {
 		Thread.sleep(10000);
-		String actualtitle = SeleniumDriver.getDriver().getTitle();
+		//String actualtitle = SeleniumDriver.getDriver().getTitle();
+		String actualtitle = SeleniumDriver.getDriver().findElement(By.xpath("/html/body/div[7]/div[20]/div/article/div/div/span[1]")).getText();
 		Assert.assertEquals("Social Imprints", actualtitle);
 		
 		//Test cases will executed when i pushed my code to github. Through Jenkins.
