@@ -1,0 +1,7 @@
+pages\actions\GmailPasswordActions.class
+utils\SeleniumDriver.class
+pages\locators\GmailPassword.class
+pages\locators\GmailEmailID.class
+pages\locators\SocialImprintsLogin.class
+pages\actions\SocialImprintsLoginActions.class
+pages\actions\GmailEmailIDActions.class
