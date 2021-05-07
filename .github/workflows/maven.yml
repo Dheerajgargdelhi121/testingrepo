@@ -23,4 +23,4 @@ jobs:
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
-        path: "**/cucumber-report.json"
+        path: "target/Runcuke/cucumber.json"
