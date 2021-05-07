@@ -21,7 +21,3 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Step-4 - List the current directory
       run: ls -a
-    - name: Step-5 - Whats inside target folder
-      run: |
-      cd target
-      ls -a
