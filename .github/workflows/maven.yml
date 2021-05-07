@@ -19,5 +19,5 @@ jobs:
         distribution: 'adopt'
     - name: Step-3 - Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Publish Test Report
-      uses: ScaCap/action-surefire-report@v1.0.5
+    - name: Cucumber Report to Annotations
+      uses: deblockt/cucumber-report-annotations-action@v1.7
