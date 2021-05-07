@@ -19,7 +19,8 @@ jobs:
         distribution: 'adopt'
     - name: Step-3 - Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Step-5 - Whats inside target folder
-      run: |
-        cd target
-        ls -a
+    - name: Cucumber Report to Annotations
+      uses: deblockt/cucumber-report-annotations-action@v1.7
+      with:
+        access-token: ${{ secrets.GITHUB_TOKEN }}
+        path: "**/cucumber-report.json"
