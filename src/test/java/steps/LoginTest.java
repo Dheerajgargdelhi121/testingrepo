@@ -35,6 +35,13 @@ public class LoginTest {
 		SeleniumDriver.openPage("https://vinsol:v1ns0l@staging.dev.socialimprints.com/admin/sign_in");
 	}
 
+	@Given("^user navigates to snackmagic staging$")
+	public void user_navigates_to_snackmagic_staging() throws Throwable {
+		SeleniumDriver.openPage("https://admin:admin@staging-frontend.snackmagic.com");
+		Thread.sleep(5000);
+		gmailEmailIDActions.get_country_name();
+	}
+
 	@When("^user clicks on the Sign in google$")
 	public void user_clicks_on_the_Sign_in_google() throws Throwable {
 
