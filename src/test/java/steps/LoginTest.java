@@ -37,9 +37,11 @@ public class LoginTest {
 
 	@Given("^user navigates to snackmagic staging$")
 	public void user_navigates_to_snackmagic_staging() throws Throwable {
-		SeleniumDriver.openPage("https://admin:admin@staging-frontend.snackmagic.com");
+		SeleniumDriver.openPage("https://oldnavy.gap.com/stores/");
+		//SeleniumDriver.openPage("https://admin:admin@staging-frontend.snackmagic.com");
 		Thread.sleep(5000);
 		gmailEmailIDActions.get_country_name();
+		//Thread.sleep(50000);
 	}
 
 	@When("^user clicks on the Sign in google$")
