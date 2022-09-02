@@ -44,6 +44,14 @@ public class LoginTest {
 		// Thread.sleep(50000);
 	}
 
+	@Given("^user navigates to automation snackmagic$")
+	public void user_navigates_to_snackmagic_automation() throws Throwable {
+		SeleniumDriver.openPage("https://admin:admin@automation-frontend.snackmagic.com");
+		Thread.sleep(5000);
+		gmailEmailIDActions.get_country_name();
+		// Thread.sleep(50000);
+	}
+
 	@When("^user clicks on the Sign in google$")
 	public void user_clicks_on_the_Sign_in_google() throws Throwable {
 
