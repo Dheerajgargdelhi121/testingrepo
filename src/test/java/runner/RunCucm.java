@@ -17,7 +17,8 @@ import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(plugin = { "json:target/Runcuke/cucumber.json", "pretty", "html:target/Runcuke/cucumber.html",
-		"com.cucumber.listener.ExtentCucumberFormatter" }, features = "src/test/resources/features", glue = "steps")
+		"com.cucumber.listener.ExtentCucumberFormatter" }, tags = {
+"@helloworld" }, features = "src/test/resources/features", glue = "steps")
 
 public class RunCucm extends AbstractTestNGCucumberTests {
 
