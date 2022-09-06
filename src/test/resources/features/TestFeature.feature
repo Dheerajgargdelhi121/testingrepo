@@ -1,7 +1,7 @@
 @Social-imprints
 Feature: Login
 
-  @helloworldi
+  @helloworldin
   Scenario: In order to verify login
     Given user navigates to snackmagic staging
    
