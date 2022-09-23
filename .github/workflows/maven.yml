@@ -18,6 +18,12 @@ jobs:
         distribution: 'adopt'
     - name: Step-3 - Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Output Run ID
+      run: echo ${{ github.run_id }}
+    - name: Output Run Number
+      run: echo ${{ github.run_number }}
+    - name: Output Run Attempt
+      run: echo ${{ github.run_attempt }}
     - name: Publish Test Report
       if: ${{ always() }}
       uses: scacap/action-surefire-report@v1
