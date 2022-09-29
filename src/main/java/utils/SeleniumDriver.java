@@ -47,7 +47,7 @@ public class SeleniumDriver {
 		 * chromeOptions.setCapability("proxy", proxy);
 		 */
 
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
 
 		// driver = new ChromeDriver(chromeOptions);
 
@@ -66,7 +66,7 @@ public class SeleniumDriver {
 
 		// options.setCapability("proxy", proxy);
 
-		// WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().setup();
 
 		// driver = new ChromeDriver(options);
 
@@ -81,8 +81,8 @@ public class SeleniumDriver {
 		 * coordinatesMap);
 		 */
 
-		// WebDriverManager.firefoxdriver().setup();
-		// driver = new FirefoxDriver();
+		//WebDriverManager.firefoxdriver().setup();
+		//driver = new FirefoxDriver();
 
 		driver.manage().window().maximize();
 
