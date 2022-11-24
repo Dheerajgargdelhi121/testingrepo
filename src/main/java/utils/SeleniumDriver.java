@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -47,7 +48,7 @@ public class SeleniumDriver {
 		 * chromeOptions.setCapability("proxy", proxy);
 		 */
 
-		//WebDriverManager.chromedriver().setup();
+		// WebDriverManager.chromedriver().setup();
 
 		// driver = new ChromeDriver(chromeOptions);
 
@@ -81,10 +82,13 @@ public class SeleniumDriver {
 		 * coordinatesMap);
 		 */
 
-		//WebDriverManager.firefoxdriver().setup();
-		//driver = new FirefoxDriver();
+		// WebDriverManager.firefoxdriver().setup();
+		// driver = new FirefoxDriver();
 
 		driver.manage().window().maximize();
+		/*
+		 * Dimension dm = new Dimension(767, 844); driver.manage().window().setSize(dm);
+		 */
 
 		/*
 		 * waitDriver = new WebDriverWait(driver, TIMEOUT);
