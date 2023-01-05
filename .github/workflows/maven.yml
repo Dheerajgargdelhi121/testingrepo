@@ -2,6 +2,11 @@ name: Java CI with Maven
 
 on:
   workflow_dispatch:
+    inputs:
+      TagName:
+        description: 'Tag Name'     
+        required: true
+        default: 'auto'
 
 jobs:
   build:
@@ -17,7 +22,7 @@ jobs:
         java-version: '1.8'
         distribution: 'adopt'
     - name: Step-3 - Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -D cucumber.options="--tags ${{ github.event.inputs.name }}" clean install
     - name: Publish Test Report
       if: ${{ always() }}
       uses: scacap/action-surefire-report@v1

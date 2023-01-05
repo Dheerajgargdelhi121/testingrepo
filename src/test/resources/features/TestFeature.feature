@@ -1,7 +1,7 @@
 @Social-imprints
 Feature: Login
 
-  @helloworld
+  @auto
   Scenario: In order to verify login
     Given user navigates to production snackmagic
    

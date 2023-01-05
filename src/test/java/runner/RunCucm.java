@@ -1,10 +1,12 @@
 package runner;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.io.File;
 import java.text.SimpleDateFormat;
 
@@ -16,16 +18,27 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-@CucumberOptions(plugin = { "json:target/Runcuke/cucumber.json", "pretty", "html:target/Runcuke/cucumber.html",
+/*@CucumberOptions(plugin = { "json:target/Runcuke/cucumber.json", "pretty", "html:target/Runcuke/cucumber.html",
 		"com.cucumber.listener.ExtentCucumberFormatter" }, tags = {
-"@helloworld" }, features = "src/test/resources/features", glue = "steps")
+				"@auto" }, features = "src/test/resources/features", glue = "steps")
+*/
+
+@CucumberOptions(plugin = { "json:target/Runcuke/cucumber.json", "pretty", "html:target/Runcuke/cucumber.html",
+		"com.cucumber.listener.ExtentCucumberFormatter" }, features = "src/test/resources/features", glue = "steps")
 
 public class RunCucm extends AbstractTestNGCucumberTests {
 
 	@BeforeClass
 
-	public static void setup() {
+	public static void setup() throws Exception {
 
+		/*
+		 * Properties prop=new Properties();
+		 * prop.load(RunCucm.class.getClassLoader().getResourceAsStream(
+		 * "MyProject.properties"));
+		 * 
+		 * String tag_na = prop.getProperty("tag_n");
+		 */
 		// Initiates the extent report and generates the output in the
 		// output/Run_<unique timestamp>/report.html file by default.
 		SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy_hhmmss");
