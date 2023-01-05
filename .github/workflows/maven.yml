@@ -6,7 +6,7 @@ on:
       name:
         description: 'Tag Name'     
         required: true
-        default: 'auto'
+        default: '@auto'
 
 jobs:
   build:
