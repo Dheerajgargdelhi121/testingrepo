@@ -3,7 +3,7 @@ name: Java CI with Maven
 on:
   workflow_dispatch:
     inputs:
-      TagName:
+      name:
         description: 'Tag Name'     
         required: true
         default: 'auto'
