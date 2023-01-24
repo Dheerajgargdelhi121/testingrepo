@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -41,18 +42,16 @@ public class GmailEmailIDActions {
 
 	public void read_email() throws Exception {
 
-		// JavascriptExecutor js = (JavascriptExecutor) SeleniumDriver.getDriver();
-		// SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@data-target='#emailForm']")).click();
-		// Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor) SeleniumDriver.getDriver();
+		SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@data-target='#emailForm']")).click();
+		Thread.sleep(5000);
 
-		// js.executeScript("document.getElementById('emailInputModal').setAttribute('value',
-		// 'snackmagictest')");
+		js.executeScript("document.getElementById('emailInputModal').setAttribute('value','snackmagictest')");
+		SeleniumDriver.getDriver().findElement(By.id("emailInputModal")).sendKeys(Keys.ENTER);
+		Thread.sleep(5000);
 
-		// SeleniumDriver.getDriver().findElement(By.id("emailInputModal")).sendKeys("snackmagictest");
-		// Thread.sleep(5000);
-
-		// SeleniumDriver.getDriver().findElement(By.id("emailFormBtn")).click();
-		// Thread.sleep(5000);
+		SeleniumDriver.getDriver().findElement(By.id("emailFormBtn")).click();
+		Thread.sleep(5000);
 
 		String email_id = SeleniumDriver.getDriver().findElement(By.id("email")).getText();
 		System.out.println(email_id);
@@ -79,24 +78,25 @@ public class GmailEmailIDActions {
 		// Password')]")).click();
 		// Thread.sleep(5000);
 		// SeleniumDriver.getDriver().switchTo().window(tabs.get(0));
-		// Thread.sleep(10000);
-		// SeleniumDriver.getDriver().findElement(By.xpath("//*//div/a[text()='Delete']")).click();
-		// Thread.sleep(10000);
+		//Thread.sleep(5000);
+		SeleniumDriver.getDriver().findElement(By.xpath("//*//div/a[text()='Delete']")).click();
+		Thread.sleep(10000);
 
-		SeleniumDriver.getDriver().findElement(By.xpath("//*//td[contains(text(),'Welcome to MinuteInbox')]")).click();
-		Thread.sleep(5000);
+		// SeleniumDriver.getDriver().findElement(By.xpath("//*//td[contains(text(),'Welcome
+		// to MinuteInbox')]")).click();
+		// Thread.sleep(5000);
 
-		WebElement iframe = SeleniumDriver.getDriver().findElement(By.id("iframeMail"));
-		SeleniumDriver.getDriver().switchTo().frame(iframe);
-		Thread.sleep(5000);
+		// WebElement iframe =
+		// SeleniumDriver.getDriver().findElement(By.id("iframeMail"));
+		// SeleniumDriver.getDriver().switchTo().frame(iframe);
+		// Thread.sleep(5000);
 
-		String message = SeleniumDriver.getDriver()
-				.findElement(By
-						.xpath("//*//span[contains(text(),'MinuteInbox provides 10-minute mail address to protect')]"))
-				.getText();
-		Thread.sleep(5000);
+		// String message =
+		// SeleniumDriver.getDriver().findElement(By.xpath("//*//span[contains(text(),'MinuteInbox
+		// provides 10-minute mail address to protect')]")).getText();
+		// Thread.sleep(5000);
 
-		System.out.println(message);
+		// System.out.println(message);
 
 		// SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@alt='Sign
 		// in']")).click();
