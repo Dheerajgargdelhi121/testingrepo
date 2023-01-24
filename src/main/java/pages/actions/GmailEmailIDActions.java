@@ -80,7 +80,9 @@ public class GmailEmailIDActions {
 		// Thread.sleep(5000);
 		// SeleniumDriver.getDriver().switchTo().window(tabs.get(0));
 		//Thread.sleep(5000);
-		SeleniumDriver.getDriver().findElement(By.xpath("//*//div/a[text()='Delete']")).click();
+		
+		js.executeScript("arguments[0].click();", SeleniumDriver.getDriver().findElement(By.xpath("//*//div/a[text()='Delete']")));
+		//SeleniumDriver.getDriver().findElement(By.xpath("//*//div/a[text()='Delete']")).click();
 		Thread.sleep(10000);
 
 		// SeleniumDriver.getDriver().findElement(By.xpath("//*//td[contains(text(),'Welcome
