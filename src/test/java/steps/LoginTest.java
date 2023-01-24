@@ -51,13 +51,27 @@ public class LoginTest {
 		gmailEmailIDActions.get_country_name();
 		// Thread.sleep(50000);
 	}
-	
+
 	@Given("^user navigates to production snackmagic$")
 	public void user_navigates_to_snackmagic_production() throws Throwable {
 		SeleniumDriver.openPage("https://www.snackmagic.com/");
 		Thread.sleep(5000);
 		gmailEmailIDActions.get_country_name();
 		// Thread.sleep(50000);
+	}
+
+	@Given("^user navigates to gmail$")
+	public void user_navigates_to_gmail() throws Throwable {
+		SeleniumDriver.openPage("https://www.minuteinbox.com/");
+		//SeleniumDriver.openPage("https://mail.google.com/");
+		Thread.sleep(5000);
+		gmailEmailIDActions.read_email();
+		Thread.sleep(5000);
+		//SeleniumDriver.openPage("https://mail.google.com/");
+		//Thread.sleep(5000);
+		//gmailEmailIDActions.read_email_content();
+		//Thread.sleep(5000);
+
 	}
 
 	@When("^user clicks on the Sign in google$")
