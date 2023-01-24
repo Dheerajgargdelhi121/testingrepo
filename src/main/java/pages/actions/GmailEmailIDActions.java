@@ -43,7 +43,8 @@ public class GmailEmailIDActions {
 	public void read_email() throws Exception {
 
 		JavascriptExecutor js = (JavascriptExecutor) SeleniumDriver.getDriver();
-		SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@data-target='#emailForm']")).click();
+		js.executeScript("arguments[0].click();", SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@data-target='#emailForm']")));
+		//SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@data-target='#emailForm']")).click();
 		Thread.sleep(5000);
 
 		js.executeScript("document.getElementById('emailInputModal').setAttribute('value','snackmagictest')");
