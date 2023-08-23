@@ -16,5 +16,8 @@ public class GmailEmailID {
 	@FindBy(how = How.XPATH, using = "//*//div[@class='country-details d-inline-block align-middle lh-1-point-5']")
 	public WebElement country_name;
 	
+	@FindBy(how = How.XPATH, using = "//*//span[@class='country-details d-inline-block align-middle lh-1-point-5']")
+	public WebElement validate_country_name;
+	
 
 }

@@ -1,28 +1,14 @@
-package steps;
+package parallel_package;
 
 import org.testng.Assert;
-import org.testng.AssertJUnit;
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import cucumber.api.PendingException;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pages.actions.GmailEmailIDActions;
 import pages.actions.GmailPasswordActions;
 import pages.actions.SocialImprintsLoginActions;
 import utils.SeleniumDriver;
+import io.cucumber.java.en.Given;
 
 public class LoginTest {
 
@@ -30,10 +16,9 @@ public class LoginTest {
 	SocialImprintsLoginActions socialImprintsLoginActions = new SocialImprintsLoginActions();
 	GmailPasswordActions gmailPasswordActions = new GmailPasswordActions();
 
-	@Given("^user navigates to marin$")
+	@Given("^user navigates to marin https://staging\\.dev\\.socialimprints\\.com/admin/sign_in$")
 	public void user_navigates_to_marin_https_staging_dev_socialimprints_com_admin_sign_in() throws Throwable {
-		SeleniumDriver.openPage("https://www.google.co.in/");
-		Thread.sleep(5000);
+		SeleniumDriver.openPage("https://vinsol:v1ns0l@staging.dev.socialimprints.com/admin/sign_in");
 	}
 
 	@Given("^user navigates to snackmagic staging$")
@@ -42,16 +27,6 @@ public class LoginTest {
 		SeleniumDriver.openPage("https://admin:admin@staging-frontend.snackmagic.com");
 		Thread.sleep(5000);
 		gmailEmailIDActions.get_country_name();
-		// Thread.sleep(50000);
-	}
-
-	@Given("^user navigates to load snackmagic$")
-	public void user_navigates_to_load_snackmagic() throws Throwable {
-		SeleniumDriver.openPage("https://www.bystadium.com/in/en/stores/recognition-store/S012512972?preview=true");
-		Thread.sleep(8000);
-		gmailEmailIDActions.scroll_to_last_page();
-		Thread.sleep(15000);
-		// gmailEmailIDActions.get_country_name();
 		// Thread.sleep(50000);
 	}
 
@@ -67,9 +42,9 @@ public class LoginTest {
 	public void user_navigates_to_snackmagic_production() throws Throwable {
 		SeleniumDriver.openPage("https://www.snackmagic.com/");
 		Thread.sleep(5000);
-		gmailEmailIDActions.get_validate_country_name();
-		// gmailEmailIDActions.get_country_name();
+		gmailEmailIDActions.get_country_name();
 		// Thread.sleep(50000);
+		throw new io.cucumber.java.PendingException();
 	}
 
 	@Given("^user navigates to gmail$")
@@ -132,12 +107,6 @@ public class LoginTest {
 
 	@Then("^user read the email$")
 	public void user_read_email() throws Throwable {
-		gmailPasswordActions.gmailIntegration();
-	}
-
-	@Then("^user downloaded the file$")
-	public void user_downloaded_the_file() throws Throwable {
-		SeleniumDriver.openPage("http://autopract.com/selenium/download.html");
 		gmailPasswordActions.gmailIntegration();
 	}
 

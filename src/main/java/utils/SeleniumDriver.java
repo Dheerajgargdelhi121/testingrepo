@@ -20,10 +20,10 @@ public class SeleniumDriver {
 
 	private static WebDriver driver;
 
-	private static WebDriverWait waitDriver;
+	// private static WebDriverWait waitDriver;
 
-	private final static int TIMEOUT = 30;
-	private final static int PAGE_LOAD_TIMEOUT = 50;
+	// private final static int TIMEOUT = 5;
+	// private final static int PAGE_LOAD_TIMEOUT = 50;
 
 	private SeleniumDriver() {
 
@@ -67,9 +67,11 @@ public class SeleniumDriver {
 
 		// options.setCapability("proxy", proxy);
 
-		WebDriverManager.chromedriver().setup();
+		// WebDriverManager.chromedriver().setup();
 
 		// driver = new ChromeDriver(options);
+		
+		//WebDriverManager.chromedriver().setup();
 
 		driver = new ChromeDriver();
 
@@ -118,8 +120,9 @@ public class SeleniumDriver {
 
 	public static void tearDown() {
 		if (driver != null) {
+			System.out.println("Hello");
 			driver.close();
-			driver.quit();
+			//driver.quit();
 		}
 		seleniumDriver = null;
 	}
