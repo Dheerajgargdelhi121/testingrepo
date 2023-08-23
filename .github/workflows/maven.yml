@@ -22,7 +22,7 @@ jobs:
         java-version: '1.8'
         distribution: 'adopt'
     - name: Step-3 - Build with Maven
-      run: mvn -D cucumber.options="--tags ${{ github.event.inputs.name }}" verify
+      run: mvn verify
     - name: Publish Test Report
       if: ${{ always() }}
       uses: scacap/action-surefire-report@v1
