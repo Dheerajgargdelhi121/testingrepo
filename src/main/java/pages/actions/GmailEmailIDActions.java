@@ -23,7 +23,7 @@ public class GmailEmailIDActions {
 	public GmailEmailIDActions() {
 		this.gmailEmailID = new GmailEmailID();
 		PageFactory.initElements(SeleniumDriver.getDriver(), gmailEmailID);
-		wait = new WebDriverWait(SeleniumDriver.getDriver(), TIMEOUT);
+		//wait = new WebDriverWait(SeleniumDriver.getDriver(), TIMEOUT);
 		j = (JavascriptExecutor) SeleniumDriver.getDriver();
 	}
 
@@ -35,16 +35,29 @@ public class GmailEmailIDActions {
 		gmailEmailID.next.click();
 	}
 
+	public void get_validate_country_name() {
+		wait.until(ExpectedConditions.elementToBeClickable(SeleniumDriver.getDriver().findElement(
+				By.xpath("//*//span[@class='country-details d-inline-block align-middle lh-1-point-5']"))));
+		wait.until(ExpectedConditions.elementToBeClickable(gmailEmailID.validate_country_name));
+		System.out.println("Country name is " + gmailEmailID.country_name.getText());
+	}
+
 	public void get_country_name() {
 		wait.until(ExpectedConditions.elementToBeClickable(gmailEmailID.country_name));
 		System.out.println("Country name is " + gmailEmailID.country_name.getText());
 	}
 
+	public void scroll_to_last_page() {
+		((JavascriptExecutor) SeleniumDriver.getDriver())
+				.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	}
+
 	public void read_email() throws Exception {
 
 		JavascriptExecutor js = (JavascriptExecutor) SeleniumDriver.getDriver();
-		js.executeScript("arguments[0].click();", SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@data-target='#emailForm']")));
-		//SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@data-target='#emailForm']")).click();
+		js.executeScript("arguments[0].click();",
+				SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@data-target='#emailForm']")));
+		// SeleniumDriver.getDriver().findElement(By.xpath("//*//a[@data-target='#emailForm']")).click();
 		Thread.sleep(5000);
 
 		js.executeScript("document.getElementById('emailInputModal').setAttribute('value','snackmagictest')");
@@ -79,10 +92,11 @@ public class GmailEmailIDActions {
 		// Password')]")).click();
 		// Thread.sleep(5000);
 		// SeleniumDriver.getDriver().switchTo().window(tabs.get(0));
-		//Thread.sleep(5000);
-		
-		js.executeScript("arguments[0].click();", SeleniumDriver.getDriver().findElement(By.xpath("//*//div/a[text()='Delete']")));
-		//SeleniumDriver.getDriver().findElement(By.xpath("//*//div/a[text()='Delete']")).click();
+		// Thread.sleep(5000);
+
+		js.executeScript("arguments[0].click();",
+				SeleniumDriver.getDriver().findElement(By.xpath("//*//div/a[text()='Delete']")));
+		// SeleniumDriver.getDriver().findElement(By.xpath("//*//div/a[text()='Delete']")).click();
 		Thread.sleep(10000);
 
 		// SeleniumDriver.getDriver().findElement(By.xpath("//*//td[contains(text(),'Welcome
